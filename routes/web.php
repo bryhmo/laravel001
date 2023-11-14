@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\getDataController;
@@ -48,4 +49,9 @@ Route::view('doa.com','doa');
 
 
 Route::get('fetch.com',[getDataController::class,'getUserData']);
+Route::get('fetchdata.com',[EmployeesController::class,'fetchUsersData']);
 
+
+/* Route::get('users', function () {
+    return User::all();
+}); */
