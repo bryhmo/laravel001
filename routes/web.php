@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\getDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+// Route::get('users',[UsersController::class,'getData']);
+Route::post('logging.com',[UsersController::class,'getData']);
+
+
+
+
+Route::post('usersinfo',[UsersController::class,'getUserInfo']);
+Route::view('info.com','info');
+
+
+Route::view('noaccess.com','noaccess');
+Route::view('accessdenied.com','accessdenied');
+
+
+//group middleware
+Route::group(['middleware'=>['protectedpage']],function(){
+
+    Route::view('home.com','home');
+
+    Route::view("login","users")->middleware('dobcheck');
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
+
+
+Route::view('doa.com','doa');
+
+
+Route::get('fetch.com',[getDataController::class,'getUserData']);
+
