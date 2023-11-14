@@ -4,6 +4,7 @@ use App\Http\Controllers\EmployeesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\getDataController;
+use App\Http\Controllers\HttpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,10 @@ Route::view('doa.com','doa');
 
 Route::get('fetch.com',[getDataController::class,'getUserData']);
 Route::get('fetchdata.com',[EmployeesController::class,'fetchUsersData']);
+
+
+Route::get('http.com',[HttpController::class,'getHttpRequest']);
+
 
 
 /* Route::get('users', function () {
