@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\getDataController;
 use App\Http\Controllers\HttpController;
+use App\Http\Controllers\HttpRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,12 @@ Route::get('fetchdata.com',[EmployeesController::class,'fetchUsersData']);
 Route::get('http.com',[HttpController::class,'getHttpRequest']);
 
 
+// Route::method_name('httprequest.com',[HttpRequestController::class,'HttpRequest']);
+// Route::get('httprequest.com',[HttpRequestController::class,'HttpRequest']);
+// Route::post('httprequest.com',[HttpRequestController::class,'HttpRequest']);
+Route::get('httprequest.com',[HttpRequestController::class,'HttpRequest']);
 
+route::view('formrequest.com','httprequest');
 /* Route::get('users', function () {
     return User::all();
 }); */

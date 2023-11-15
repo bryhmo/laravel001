@@ -9,4 +9,5 @@ class Employee extends Model
 {
     use HasFactory;
     // public $table = 'verifyuser';
+    //protected $table = 'verifyuser';
 }

@@ -1,0 +1,4 @@
+    {{method_field('PUT')}}
+    {{method_field('PATCH')}}
+    {{method_field('DELETE')}}
+    @csrf

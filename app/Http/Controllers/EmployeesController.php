@@ -12,7 +12,7 @@ class EmployeesController extends Controller
     //
     public function fetchUsersData()
     {
-        $fetchUser = (Employee::all());
+        $fetchUser = Employee::all();
         return view('employee',['dbdata'=>$fetchUser]);
         // return json_encode($fetchUser);
         //  $fetchUser = Employee::all('id','email','firstname');
