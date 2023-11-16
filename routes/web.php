@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddMemberController;
 use App\Http\Controllers\EmployeesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
@@ -39,7 +40,8 @@ Route::view('accessdenied.com','accessdenied');
 Route::group(['middleware'=>['protectedpage']],function(){
 
     Route::view('home.com','home');
-
+ 
+    //routed middleware;
     Route::view("login","users")->middleware('dobcheck');
 
     Route::get('/', function () {
@@ -68,19 +70,24 @@ route::view('formrequest.com','httprequest');
     return User::all();
 }); */
 
-Route::post('session.com',[SessionController::class,'GetSessionData']);
 
+
+
+// working with the LARAVEL SESSION 
+
+Route::post('session.com',[SessionController::class,'GetSessionData']);
 // Route::view('selog.com','sessionlogin');
 // Route::view('sepro.com','sessionprofile');
-
 //not letting a user bypass the profile link without submiting the form or going direct to the profile page
 Route::get('sepro.com', function(){
     if(!session()->has('myHolder')){
         return redirect('selog.com');
+        // return redirect('hack.com');
+        // return redirect('selog.com');
+        // return redirect('selog.com','please login through the main page']);
     }
     return view('sessionprofile');
 });
-
 
 //protecting the login route
 Route::get('selog.com', function(){
@@ -97,6 +104,27 @@ Route::get('/logout',function(){
     if(session()->has('myHolder'))
     {
         session()->pull('myHolder');
+        return redirect('selog.com');
     }
-    return redirect('selog.com');
+    return view('sepro.com');
+    
 });
+
+Route::get('hack.com', function(){
+    return view('hack');
+});
+
+
+
+
+//WORKING WITH THE FLASH SESSION
+/* controller */
+Route::post('addmember.com',[AddMemberController::class,'AddMember']);
+
+/* add.blade.php Route */
+Route::get('add.com',function(){
+    return view('add');
+});
+
+
+//working with file uploads in laravel

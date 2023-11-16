@@ -3,4 +3,4 @@
 
 
 
-<h2 style="text-align:center;color:chocolate"><a href="/logout" >logout</a></h2>
+<h2 style="text-align:center;color:chocolate"><a href="/logout" >Logout</a></h2>

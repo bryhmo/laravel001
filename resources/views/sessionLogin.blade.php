@@ -1,3 +1,4 @@
+
 <h1 style="text-align: center;color:red;">User Session Login</h1>
 <form action="session.com" method="post" style="margin-left: 40%;">
     @csrf
@@ -9,5 +10,5 @@
     <br>
     <input type="password" name="password" placeholder="enter your password"><br>
     <br>
-    <button type="submit">Submit</button>
+    <button type="submit">Login</button>
 </form>
