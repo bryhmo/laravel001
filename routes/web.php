@@ -83,6 +83,7 @@ Route::post('session.com',[SessionController::class,'GetSessionData']);
 Route::get('sepro.com', function(){
     if(!session()->has('myHolder')){
         return redirect('selog.com');
+        // ->with('message','please login properly');
         // return redirect('hack.com');
         // return redirect('selog.com');
         // return redirect('selog.com','please login through the main page']);
@@ -134,3 +135,6 @@ Route::post('uploadfiles.com',[FilesUploadController::class,'FileUpload']);
 Route::get('fileups.com',function(){
     return view('upload');
 });
+
+
+//WORKING WITH LOCALIZATION IN LARAVEL
