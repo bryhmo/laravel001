@@ -8,6 +8,7 @@ use App\Http\Controllers\getDataController;
 use App\Http\Controllers\HttpController;
 use App\Http\Controllers\HttpRequestController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\FilesUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,4 +128,9 @@ Route::get('add.com',function(){
 });
 
 
-//working with file uploads in laravel
+//WORKING WITH THE FILE UPLOADS IN LARAVEL
+Route::post('uploadfiles.com',[FilesUploadController::class,'FileUpload']);
+
+Route::get('fileups.com',function(){
+    return view('upload');
+});
