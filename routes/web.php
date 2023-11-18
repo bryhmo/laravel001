@@ -9,6 +9,7 @@ use App\Http\Controllers\HttpController;
 use App\Http\Controllers\HttpRequestController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\FilesUploadController;
+use App\Http\Controllers\StudentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,4 +138,17 @@ Route::get('fileups.com',function(){
 });
 
 
-//WORKING WITH LOCALIZATION IN LARAVEL
+//WORKING WITH PAGINATION IN LARAVEL
+Route::get('student.com',[StudentsController::class,'myPagination']);
+
+
+//
+Route::get('delete/{id}',[StudentsController::class,'deleteUser']);
+
+Route::get('edit/{id}',[StudentsController::class,'showUser']);
+
+
+// Route::get('pagelist.com',function(){
+//     return view('pagelist');
+// });
+ 

@@ -1,5 +1,5 @@
 <h1 style="text-align: center;color:brown">EMPLOYEES INFORMATION</h1>
-<table border="1" style="color:blueviolet;margin-left:25%">
+<table border="1" style="margin-left:25%;">
     <tr>
         <td>id</td>
         <td>firstname</td>
