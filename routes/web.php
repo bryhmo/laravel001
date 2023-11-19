@@ -139,13 +139,23 @@ Route::get('fileups.com',function(){
 
 
 //WORKING WITH PAGINATION IN LARAVEL
+Route::post('addnewuser',[StudentsController::class,'AddUser']);
+Route::get('registerUser',function(){
+    return view('register');
+});
+
+//paginate users
 Route::get('student.com',[StudentsController::class,'myPagination']);
 
 
-//
+//delete user
 Route::get('delete/{id}',[StudentsController::class,'deleteUser']);
 
+//edit user
 Route::get('edit/{id}',[StudentsController::class,'showUser']);
+
+//update user
+Route::post('/update',[StudentsController::class,'updateUser']);
 
 
 // Route::get('pagelist.com',function(){

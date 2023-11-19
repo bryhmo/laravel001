@@ -1,5 +1,8 @@
 <h1 style="text-align: center;">welcome edit your name</h1>
 <form action="edit" method="POST" style="margin-left: 30%;color:red;">
+@csrf
+    <input type="hidden" name="id" value="{{$keyholder['id']}}"><br><br>
+    <br>
     <label for="firstname">LastName:</label>
     <input type="text" name="lastname" value="{{$keyholder['lastname']}}"><br><br>
     <br>
